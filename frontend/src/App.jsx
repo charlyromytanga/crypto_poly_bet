@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Markets from './pages/Markets';
 import Bet from './pages/Bet';
+import DemoLanding from './pages/DemoLanding';
 
 const styles = {
 	root: {
@@ -126,6 +127,7 @@ export default function App() {
 					<Route path="/" element={<Landing />} />
 					<Route path="/markets" element={<Markets />} />
 					<Route path="/bet" element={<Bet />} />
+					<Route path="/demo" element={<DemoLanding />} />
 				</Routes>
 			</div>
 		</BrowserRouter>
