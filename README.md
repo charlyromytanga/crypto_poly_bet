@@ -1,4 +1,4 @@
-# Crypto Voting
+# POLY BET 
 
 Projet de vote et prédiction crypto, architecture microservices.
 

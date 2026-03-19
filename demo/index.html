@@ -96,8 +96,19 @@
           <li>📱 Inscription ultra rapide, sans prise de tête</li>
         </ul>
         <div class="muted">Lancez la démo sur mobile ou desktop, sans installation.</div>
-        <a class="cta" href="https://northeastern-paleozoological-ena.ngrok-free.dev/markets">Découvrir les marchés</a>
+        <button class="cta" id="spa-link">Découvrir les marchés</button>
       </div>
     </main>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var spaBtn = document.getElementById('spa-link');
+        if (spaBtn) {
+          spaBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.pathname = '/markets';
+          });
+        }
+      });
+    </script>
   </body>
 </html>
