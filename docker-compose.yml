@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  api:
+    build: ./api
+    container_name: crypto-api
+    ports:
+      - "8082:8080"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=development
+    networks:
+      - crypto-net
+
+  frontend:
+    build: ./frontend
+    container_name: crypto-frontend
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
+    depends_on:
+      - api
+    networks:
+      - crypto-net
+
+  oracle:
+    build: ./oracle
+    container_name: crypto-oracle
+    restart: unless-stopped
+    networks:
+      - crypto-net
+
+  smart-contracts:
+    build: ./smart-contracts
+    container_name: crypto-smart-contracts
+    restart: unless-stopped
+    networks:
+      - crypto-net
+
+networks:
+  crypto-net:
+    driver: bridge

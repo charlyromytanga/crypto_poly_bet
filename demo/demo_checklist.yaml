@@ -1,0 +1,55 @@
+demo_context:
+  objectif: "Démo Crypto Voting — Prediction Game accessible sur mobile via QR code et tunnel HTTPS"
+  reseau:
+    box_personnelle_autorisee: true
+    condition_essentielle: "PC hôte et smartphones connectés au même Wi-Fi"
+    isolation_clients:
+      doit_etre_desactivee: true
+      description: "Si l'isolation AP/client est active, les téléphones ne verront pas le PC"
+
+services_et_urls:
+  landing_page:
+    service: "landing (Nginx) — Crypto Voting"
+    acces_local_machine: "http://localhost:8081"
+    acces_smartphone: "http://<IP_PC>:8081"
+  api:
+    service: "API Node.js"
+    acces_local_machine: "http://localhost:8082"
+    acces_smartphone: "http://<IP_PC>:8082"
+  smart_contracts:
+    service: "Smart Contracts"
+    acces_local_machine: "http://localhost:8083"
+    acces_smartphone: "http://<IP_PC>:8083"
+
+points_importants:
+  - "Le QR code doit pointer vers http://<IP_PC>:8081 ou l'URL ngrok HTTPS, jamais localhost"
+  - "La landing page doit présenter les marchés de prédiction et onboarding rapide"
+  - "Ouvrir les ports 8081 (frontend), 8082 (API), 8083 (smart contracts) dans le firewall du PC"
+  - "Pour HTTPS mobile, utiliser un tunnel (ngrok) vers le port 8081"
+  - "Vérifier la connexion entre frontend, API et smart contracts"
+
+checklist_jour_j:
+  avant_arrivee_public:
+    - "Démarrer les conteneurs Docker et vérifier qu'ils sont healthy (frontend, api, smart-contracts, oracle)"
+    - "Vérifier depuis le PC: http://localhost:8081, http://localhost:8082, http://localhost:8083"
+    - "Lancer ngrok pour exposer le frontend en HTTPS"
+    - "Générer le QR code pour accès mobile"
+    - "Identifier l'IP locale du PC sur le Wi-Fi de la box (ex: 192.168.x.y)"
+    - "Tester depuis un smartphone: http://<IP_PC>:8080 puis clic vers Streamlit"
+    - "Générer/mettre à jour le QR code vers http://<IP_PC>:8080"
+    - "Confirmer l'absence d'isolation client sur la box"
+    - "Vérifier que le firewall autorise 8080 et 8501"
+
+  juste_avant_demo:
+    - "Faire un test complet du parcours: QR -> landing -> bouton -> Streamlit"
+    - "Préparer un smartphone de secours déjà connecté au Wi-Fi"
+    - "Préparer un plan B: mode synthétique activable rapidement"
+
+  pendant_demo:
+    - "Surveiller les logs des services landing et streamlit"
+    - "En cas d'échec d'accès, revalider IP du PC, Wi-Fi, firewall et URL QR"
+
+plan_b_rapide:
+  - "Si un téléphone ne charge pas la page: ouvrir directement http://<IP_PC>:8080 dans le navigateur"
+  - "Si Streamlit est lent: éviter les téléchargements de données marché en direct"
+  - "Si HTTPS est exigé à la dernière minute: basculer vers un tunnel sécurisé temporaire"

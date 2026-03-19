@@ -1,0 +1,5 @@
+Démarrage rapide du projet crypto-voting.
+
+1. Installer les dépendances dans chaque dossier (api, frontend, oracle, smart-contracts).
+2. Lancer docker-compose up.
+3. Accéder au frontend sur http://localhost:8081.

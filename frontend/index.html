@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Voting — Prediction Game</title>
+    <meta name="description" content="La plateforme où l’info devient un jeu — prédisez le futur, gagnez de l’ETH, et prouvez que vous avez raison." />
+    <style>
+      :root {
+        --bg: #0f172a;
+        --card: #111827;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #22c55e;
+        --accent-hover: #16a34a;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        width: 100vw;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: linear-gradient(180deg, #0b1220 0%, var(--bg) 100%);
+        color: var(--text);
+        padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: var(--card);
+        border-radius: 0;
+        box-shadow: 0 8px 32px rgba(34,197,94,0.08);
+        padding: 32px 24px;
+        text-align: center;
+      }
+      @media (max-width: 600px) {
+        .container {
+          padding: 16px 6px;
+        }
+        h1 {
+          font-size: 1.3rem;
+        }
+        .pitch {
+          font-size: 1rem;
+        }
+        .features {
+          font-size: 0.95rem;
+        }
+        .cta {
+          font-size: 1rem;
+          min-height: 48px;
+        }
+      }
+      h1 {
+        margin: 0 0 16px;
+        font-size: clamp(1.7rem, 5vw, 2.2rem);
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        color: var(--accent);
+      }
+      .pitch {
+        margin: 0 0 24px;
+        color: var(--text);
+        font-weight: 600;
+        font-size: 1.18rem;
+        line-height: 1.4;
+      }
+      .features {
+        margin: 0 0 24px;
+        padding: 0;
+        list-style: none;
+        color: var(--muted);
+        font-size: 1rem;
+        text-align: left;
+      }
+      .features li {
+        margin-bottom: 8px;
+        padding-left: 16px;
+        position: relative;
+      }
+      .cta {
+        display: inline-flex;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+        min-height: 56px;
+        padding: 0 32px;
+        border: 0;
+        border-radius: 14px;
+        background: var(--accent);
+        color: #052e16;
+        font-weight: 700;
+        font-size: 1.12rem;
+        text-decoration: none;
+        transition: background 0.2s ease;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(34,197,94,0.12);
+      }
+      .cta:hover,
+      .cta:focus-visible {
+        background: var(--accent-hover);
+        outline: none;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 1.05rem;
+        margin: 0 0 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>POLY BET</h1>
+      <div class="pitch">
+        La plateforme où l’info devient un jeu.<br />
+        Prédisez le futur, gagnez de l’ETH, et prouvez que vous avez raison.<br />
+        <span style="color:#16a34a">Tu penses avoir raison ? Mets de l’ETH dessus.</span>
+      </div>
+      <ul class="features">
+        <li>🎮 Gamification hardcore : niveaux, badges, streaks</li>
+        <li>🧑‍🤝‍🧑 Social : profils publics, leaderboard, partage</li>
+        <li>🎲 Marchés funs : pop culture, trends, sport, politique</li>
+        <li>⚡ Résultats fiables et transparents</li>
+        <li>📱 Inscription ultra rapide, sans prise de tête</li>
+      </ul>
+      <div class="muted">Lancez la démo sur mobile ou desktop, sans installation.</div>
+      <a class="cta" href="/markets">Découvrir les marchés</a>
+    </div>
+    <div id="root"></div>
+  </body>
+</html>
