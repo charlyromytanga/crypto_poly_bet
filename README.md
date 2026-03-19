@@ -1,6 +1,6 @@
 # POLY BET 
 
-Projet de vote et prédiction crypto, architecture microservices.
+La plateforme où l’info devient un jeu.
 
 ## Stack technique
 
